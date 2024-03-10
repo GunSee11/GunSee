@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft 팁</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Minecraft 팁</h1>
+  </header>
+  <section id="tips">
+    <h2>팁 목록</h2>
+    <ul id="tip-list">
+      <!-- 여기에 팁들이 동적으로 추가될 것입니다. -->
+    </ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+#tips {
+  padding: 20px;
+}
+
+#tip-list {
+  list-style: none;
+  padding: 0;
+}
+
+#tip-list li {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#tip-list li h3 {
+  margin-top: 0;
+  color: #007bff; /* 마인크래프트 다운 글자 색깔 */
+}
+
+#tip-list li p {
+  margin-top: 5px;
+}
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const tipList = document.getElementById("tip-list");
+
+  // 여기에 팁을 동적으로 추가하는 코드를 작성합니다.
+  const tips = [
+    { title: "초보자를 위한 첫 번째 팁", content: "첫 번째 팁 내용입니다." },
+    { title: "두 번째 팁", content: "두 번째 팁 내용입니다." },
+    { title: "세 번째 팁", content: "세 번째 팁 내용입니다." },
+    // 필요한 만큼 팁을 추가할 수 있습니다.
+  ];
+
+  tips.forEach(tip => {
+    const li = document.createElement("li");
+    const title = document.createElement("h3");
+    const content = document.createElement("p");
+
+    title.textContent = tip.title;
+    content.textContent = tip.content;
+
+    li.appendChild(title);
+    li.appendChild(content);
+    tipList.appendChild(li);
+  });
+});
+</script>
